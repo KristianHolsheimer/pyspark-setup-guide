@@ -166,3 +166,4 @@ The spark context variable `sc` is your gateway towards everything sparkly.
 <div id='examples-helloworld'/></div>
 ###3.1 | Hello World: Word Count
 
+Check out the notebook [spark_word_count.ipynb](spark_word_count.ipynb).
