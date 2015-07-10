@@ -178,14 +178,13 @@ $ nano ~/.ipython/profile_default/load_spark_environment_variables.py
 and paste the following lines in this file:
 ```python
 import os
+import sys
 
 if 'SPARK_HOME' not in os.environ:
     os.environ['SPARK_HOME'] = '/opt/spark'
 
-if 'PYTHONPATH' not in os.environ:
-    os.environ['PYTHONPATH'] = '/opt/spark/python'
-elif '/opt/spark/python' not in os.environ['PYTHONPATH'].split(':'):
-    os.environ['PYTHONPATH'] = '/opt/spark/python:' + os.environ['PYTHONPATH']
+if '/opt/spark/python' not in sys.path:
+    sys.path.insert(0, '/opt/spark/python')
 ```
 
 <div id='examples'/></div>
