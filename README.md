@@ -70,7 +70,7 @@ $ wget http://www.scala-lang.org/files/archive/scala-2.11.7.deb
 $ sudo dpkg -i scala-2.11.7.deb
 ```
 
-***Note:*** *You may want to check if there's a more recent version. At the time of this writing, 2.11.7 was the most recent.* 
+***Note:*** *You may want to check if there's a more recent version. At the time of this writing, 2.11.7 was the most recent stable release. Visit the [Scala download page](http://www.scala-lang.org/download/all.html) to check for updates.* 
 
 Again, let's check whether the installation was successful by running:
 ```bash
@@ -109,22 +109,21 @@ $ sudo pip install py4j
 ###2.1 | Download and extract source tarball
 ```bash
 $ cd ~/Downloads
-$ wget http://d3kbcqa49mib13.cloudfront.net/spark-1.4.0.tgz
-$ tar xvf spark-1.4.0.tgz
+$ wget http://d3kbcqa49mib13.cloudfront.net/spark-1.6.0.tgz
+$ tar xvf spark-1.6.0.tgz
 ```
-
-***Note:*** *Also here, you may want to check if there's a more recent version.* 
+***Note:*** *Also here, you may want to check if there's a more recent version: visit the [Spark download page](http://spark.apache.org/downloads.html)*.
 
 <div id='spark-compile'/></div>
 ###2.2 | Compile source
 ```bash
-$ cd ~/Downloads/spark-1.4.0
+$ cd ~/Downloads/spark-1.6.0
 $ sbt/sbt assembly
 ```
 
 This will take a while... (approximately 20 ~ 30 minutes)
 
-After the dus settles, you can cehck whether Spark installed correctly by running the following example that should return the number π.
+After the dust settles, you can check whether Spark installed correctly by running the following example that should return the number π ≈ 3.14159...
 ```bash
 $ ./bin/run-example SparkPi 10
 ```
@@ -151,8 +150,8 @@ $ nano conf/log4j.properties
 <div id='spark-install'/></div>
 ###2.3 | Install files
 ```bash
-$ sudo mv ~/Downloads/spark-1.4.0 /opt/
-$ sudo ln -s /opt/spark-1.4.0 /opt/spark
+$ sudo mv ~/Downloads/spark-1.6.0 /opt/
+$ sudo ln -s /opt/spark-1.6.0 /opt/spark
 ```
 
 Add this to your path by editing your bashrc file:
