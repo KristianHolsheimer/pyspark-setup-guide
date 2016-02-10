@@ -172,7 +172,7 @@ $ . ~/.bashrc
 
 If your ipython instance somehow doesn't find these environment variables for whatever reason, you could also make sure they are set when ipython spins up. Let's add this to our ipython settings by creating a new python script named `load_spark_environment_variables.py` in the default profile startup folder:
 ```bash
-$ nano ~/.ipython/profile_default/load_spark_environment_variables.py
+$ nano ~/.ipython/profile_default/startup/load_spark_environment_variables.py
 ```
 and paste the following lines in this file:
 ```python
