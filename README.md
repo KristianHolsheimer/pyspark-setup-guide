@@ -1,4 +1,4 @@
-#Spark + pyspark setup guide
+# Spark + pyspark setup guide
 
 This is guide for installing and configuring an instance of Apache Spark and its python API pyspark on a single machine running ubuntu 15.04.
 
@@ -34,10 +34,12 @@ This is guide for installing and configuring an instance of Apache Spark and its
 In order to run Spark, we need Scala, which in turn requires Java. So, let's install these requirements first
 
 <div id='requirements'/></div>
-##1 | Install Requirements
+
+## 1 | Install Requirements
 
 <div id='requirements-java'/></div>
-###1.1 | Install Java
+
+### 1.1 | Install Java
 
 ```bash
 $ sudo apt-add-repository ppa:webupd8team/java
@@ -60,7 +62,8 @@ Java HotSpot(TM) 64-Bit Server VM (build 24.80-b11, mixed mode)
 ```
 
 <div id='requirements-scala'/></div>
-###1.2 | Install Scala
+
+### 1.2 | Install Scala
 
 Download and install deb package from scala-lang.org:
 
@@ -82,7 +85,8 @@ Scala code runner version 2.11.7 -- Copyright 2002-2013, LAMP/EPFL
 ```
 
 <div id='requirements-git'/></div>
-###1.3 | Install git
+
+### 1.3 | Install git
 
 We shall install Apache Spark by building it from source. This procedure depends implicitly on git, thus be sure install git if you haven't already:
 ```bash
@@ -90,7 +94,8 @@ $ sudo apt-get -y install git
 ```
 
 <div id='requirements-py4j'/></div>
-###1.4 | Install py4j
+
+### 1.4 | Install py4j
 
 PySpark requires the `py4j` python package. If you're running a virtual environment, run:
 
@@ -103,10 +108,13 @@ $ sudo pip install py4j
 ```
 
 <div id='spark'/></div>
-##2 | Install Apache Spark
+
+## 2 | Install Apache Spark
 
 <div id='spark-tarball'/></div>
-###2.1 | Download and extract source tarball
+
+### 2.1 | Download and extract source tarball
+
 ```bash
 $ cd ~/Downloads
 $ wget http://d3kbcqa49mib13.cloudfront.net/spark-1.6.0.tgz
@@ -115,7 +123,8 @@ $ tar xvf spark-1.6.0.tgz
 ***Note:*** *Also here, you may want to check if there's a more recent version: visit the [Spark download page](http://spark.apache.org/downloads.html)*.
 
 <div id='spark-compile'/></div>
-###2.2 | Compile source
+
+### 2.2 | Compile source
 ```bash
 $ cd ~/Downloads/spark-1.6.0
 $ sbt/sbt assembly
@@ -148,7 +157,8 @@ $ nano conf/log4j.properties
     log4j.rootCategory=ERROR, console
 
 <div id='spark-install'/></div>
-###2.3 | Install files
+
+### 2.3 | Install files
 ```bash
 $ sudo mv ~/Downloads/spark-1.6.0 /opt/
 $ sudo ln -s /opt/spark-1.6.0 /opt/spark
@@ -187,7 +197,8 @@ if '/opt/spark/python' not in sys.path:
 ```
 
 <div id='examples'/></div>
-##3 | Examples
+
+## 3 | Examples
 
 Now we're finally ready to start running our first PySpark application. Load the spark context by opening up a python interpreter (or ipython / ipython notebook) and running:
 
@@ -200,6 +211,7 @@ The spark context variable `sc` is your gateway towards everything sparkly.
 
 
 <div id='examples-helloworld'/></div>
-###3.1 | Hello World: Word Count
+
+### 3.1 | Hello World: Word Count
 
 Check out the notebook [spark_word_count.ipynb](spark_word_count.ipynb).
